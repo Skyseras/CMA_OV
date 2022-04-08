@@ -19,10 +19,26 @@
     </nav>
     <main>
         <div class="d-flex justify-content-center align-items-center">
-            <div class="bg-light p-5 m-5 w-75">
-                <h1>Hello!</h1>
-                <p><a class="text-decoration-none" href="signup.html">Sign up</a> to start creating your contacts list.</p>
-                <p>Already have an account? <a class="text-decoration-none" href="login.html">Login here.</a></p>
+            <div class="bg-light p-5 m-5 w-50">
+                <form class="">
+                    <div class="m-3 d-flex justify-content-center align-items-center">
+                        <h3>Authenticate</h3>
+                    </div>
+                    <div class="m-3">
+                        <label for="validationCustom01" class="form-label">Username</label>
+                        <input type="text" class="small-size form-control" id="validationCustom01" placeholder="username" required>
+                    </div>
+                    <div class="m-3">
+                        <label for="validationCustom02" class="form-label">Password</label>
+                        <input type="password" class="small-size form-control" id="validationCustom02" placeholder="password" required>
+                    </div>
+                    <div class="m-3">
+                        <button class="w-100 btn btn-primary" type="submit">Login</button>
+                    </div>
+                    <div class="m-3">
+                        <p>No account? <a class="text-decoration-none" href="signup.html">Sign up</a> here.</p>
+                    </div>
+                </form>
             </div>
         </div>
     </main>
