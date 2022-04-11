@@ -13,8 +13,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Contact List</a>
-            <a class="nav-link active text-muted hov" href="login.html">Login</a>
+            <a class="navbar-brand" href="index.php">Contact List</a>
+            <a class="nav-link active text-muted hov" href="login.php">Login</a>
         </div>
     </nav>
     <main>
@@ -22,7 +22,7 @@
             <div class="bg-light p-5 m-5 w-50">
                 <form class="">
                     <div class="m-3 d-flex justify-content-center align-items-center">
-                        <h3>Authenticate</h3>
+                        <h3>Sign Up</h3>
                     </div>
                     <div class="m-3">
                         <label for="validationCustom01" class="form-label">Username</label>
@@ -33,10 +33,14 @@
                         <input type="password" class="small-size form-control" id="validationCustom02" placeholder="password" required>
                     </div>
                     <div class="m-3">
-                        <button class="w-100 btn btn-primary" type="submit">Login</button>
+                        <label for="validationCustom03" class="form-label">Password verify</label>
+                        <input type="password" class="small-size form-control" id="validationCustom03" placeholder="password verify" required>
                     </div>
                     <div class="m-3">
-                        <p>No account? <a class="text-decoration-none" href="signup.html">Sign up</a> here.</p>
+                        <button class="w-100 btn btn-primary" type="submit">Sign Up</button>
+                    </div>
+                    <div class="m-3">
+                        <p>Already have an account? <a class="text-decoration-none" href="login.php">Log In</a> here.</p>
                     </div>
                 </form>
             </div>

@@ -13,11 +13,11 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Contact List</a>
+            <a class="navbar-brand" href="index.php">Contact List</a>
             <div class="d-flex justify-content-center align-items-center">
-                <a class="nav-link active text-muted hov" href="profil.html">Yasser</a>
-                <a class="nav-link active text-muted hov" href="contact.html">Contacts</a>
-                <a class="nav-link active text-muted hov" href="login.html">Logout</a>
+                <a class="nav-link active text-muted hov" href="profil.php">Yasser</a>
+                <a class="nav-link active text-muted hov" href="contact.php">Contacts</a>
+                <a class="nav-link active text-muted hov" href="login.php">Logout</a>
             </div>
         </div>
     </nav>
