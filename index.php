@@ -13,16 +13,16 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Contact List</a>
-            <a class="nav-link active text-muted hov" href="login.html">Login</a>
+            <a class="navbar-brand" href="index.php">Contact List</a>
+            <a class="nav-link active text-muted hov" href="login.php">Login</a>
         </div>
     </nav>
     <main>
         <div class="d-flex justify-content-center align-items-center">
             <div class="bg-light p-5 m-5 w-75">
                 <h1>Hello!</h1>
-                <p><a class="text-decoration-none" href="signup.html">Sign up</a> to start creating your contacts list.</p>
-                <p>Already have an account? <a class="text-decoration-none" href="login.html">Login here.</a></p>
+                <p><a class="text-decoration-none" href="signup.php">Sign up</a> to start creating your contacts list.</p>
+                <p>Already have an account? <a class="text-decoration-none" href="login.php">Login here.</a></p>
             </div>
         </div>
     </main>
