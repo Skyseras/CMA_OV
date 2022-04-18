@@ -24,15 +24,9 @@ if(empty($_SESSION["name"])) {
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-<<<<<<< HEAD:profil.php
             <a class="navbar-brand" href="contact.php">Contact List</a>
             <div class="d-flex justify-content-center align-items-center">
                 <a class="nav-link active text-muted hov" href="profil.php"><?= $_SESSION['name']?></a>
-=======
-            <a class="navbar-brand" href="index.php">Contact List</a>
-            <div class="d-flex justify-content-center align-items-center">
-                <a class="nav-link active text-muted hov" href="profil.php">Yasser</a>
->>>>>>> 2212dc748e42a1a42fa7147902bc561d9bf19250:profil.html
                 <a class="nav-link active text-muted hov" href="contact.php">Contacts</a>
                 <a class="nav-link active text-muted hov" href="login.php">Logout</a>
             </div>
