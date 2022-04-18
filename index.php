@@ -14,7 +14,11 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
+<<<<<<< HEAD:index.php
             <a class="navbar-brand" href="contact.php">Contact List</a>
+=======
+            <a class="navbar-brand" href="index.php">Contact List</a>
+>>>>>>> 2212dc748e42a1a42fa7147902bc561d9bf19250:index.html
             <a class="nav-link active text-muted hov" href="login.php">Login</a>
         </div>
     </nav>

@@ -1,26 +1,3 @@
-<?php 
-require_once('contactFunctionDb.php');
-session_start();
-if(empty($_SESSION["name"])) {
-        header('location:login.php');
-}
-
-$contact = new contact();
-$contact->SetId($_SESSION['id']);
-$res=$contact->Select();
-
-if (isset($_POST['save'])) {
-    $contact->SetName($_POST['name']);
-    $contact->SetPhone($_POST['phone']);
-    $contact->SetEmail($_POST['email']);
-    $contact->SetAddress($_POST['address']);
-    $contact->SetId($_SESSION['id']);
-  
-    if($contact->Add()) {
-        header("Location:contact.php");
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,9 +13,9 @@ if (isset($_POST['save'])) {
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="contact.php">Contact List</a>
+            <a class="navbar-brand" href="index.php">Contact List</a>
             <div class="d-flex justify-content-center align-item-center">
-                <a class="nav-link active text-muted hov" href="profil.php"><?= $_SESSION['name']?></a>
+                <a class="nav-link active text-muted hov" href="profil.php">Yasser</a>
                 <a class="nav-link active text-muted hov" href="contact.php">Contacts</a>
                 <a class="nav-link active text-muted hov" href="login.php">Logout</a>
             </div>
@@ -49,76 +26,69 @@ if (isset($_POST['save'])) {
             <div class="bg-light p-5 m-5 w-100">
                 <div class="d-flex justify-content-between align-items-center">
                     <h2>Contacts</h2>
-                    <a class="text-decoration-none" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New Contact</a>
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Add New Course Form</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="px-4 py-3" id="form">
-                                <h4 id="addcontact">Add Contact:</h4>
-                                    <form class="row g-3 needs-validation text-muted" method="POST" novalidate>
-                                    <div class="col-md-6">
-                                            <label for="name" class="form-label">Name</label>
-                                            <input type="text" class="small-size form-control" name="name" id="name" placeholder="Enter name" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="phone" class="form-label">Phone</label>
-                                            <input type="text" class="small-size form-control" name="phone" id="phone" placeholder="Enter phone">
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label for="email" class="form-label">Email</label>
-                                            <input type="email" class="small-size form-control" name="email" id="email" placeholder="Enter email" required>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label for="address" class="form-label">Address</label>
-                                            <input type="text" class="small-size form-control" name="address" id="address" placeholder="Enter address" required>
-                                        </div>
-                                        <div class="col-12 mt-3 modal-footer text-center">
-                                            <button class="btn btn-primary" name="save" type="submit">Save</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <a class="text-decoration-none" onclick="scrollto()">Add New Contact</a>
                 </div>
                 <div>
                     <h4>Contacts List:</h4>
+                    <div>
+                        <p>No Contacts.</p>
+                    </div>
                     <div class="py-4">
                         <div class=" px-3">
-                            <?php if (!empty($res)) { foreach($res as $rows) {?>
                             <hr class="my-0">
                             <div class="row my-3">
-                                <p class="col-sm-2 mb-0 p-1"><?= $rows['name']; ?></p>
-                                <p class="col-sm-3 mb-0 p-1"><?= $rows['email']; ?></p>
-                                <p class="col-sm-2 mb-0 p-1"><?= $rows['phone']; ?></p>
-                                <p class="col-sm-3 mb-0 p-1"><?= $rows['address']; ?></p>
-                                <p class="col-sm-1 mb-0 p-1"><a class="text-decoration-none" href="delete.php?id=<?= $rows['id_contact']?>&req=update" type="button">edit</a></p>
-                                <p class="col-sm-1 mb-0 p-1"><a class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModaldelete" type="button">delete</a></p>
-                                <div class="modal fade" id="exampleModaldelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title text-danger" id="exampleModalLabel">DELETE CONTACT ALERT</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="px-4 py-3">
-                                                Do you really want to delete this contact? <br>
-                                            </div>
-                                            <div class="px-4 py-3">
-                                                <a class="text-decoration-none text-info" href="action.php?delete=<?= $rows['id_contact']?>&req=delete">Yes, Delete this contact please<img class="px-2" src="icon/can.svg" alt=""></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <p class="col-sm-2 mb-0 p-1">Yasser</p>
+                                <p class="col-sm-3 mb-0 p-1">Yasser@gmail.com</p>
+                                <p class="col-sm-2 mb-0 p-1">+212 651 515 151</p>
+                                <p class="col-sm-3 mb-0 p-1">Address youssoufia rue 31 N° 34</p>
+                                <p class="col-sm-1 mb-0 p-1">edit</p>
+                                <p class="col-sm-1 mb-0 p-1">delete</p>
                             </div>
-                            <?php }} else {echo "<div><p>No Contacts.</p></div>";}?>
+                            <hr class="my-0">
+                            <div class="row my-3">
+                                <p class="col-sm-2 mb-0 p-1">Yasser</p>
+                                <p class="col-sm-3 mb-0 p-1">Yasser@gmail.com</p>
+                                <p class="col-sm-2 mb-0 p-1">+212 651 515 151</p>
+                                <p class="col-sm-3 mb-0 p-1">Address youssoufia rue 31 N° 34</p>
+                                <p class="col-sm-1 mb-0 p-1">edit</p>
+                                <p class="col-sm-1 mb-0 p-1">delete</p>
+                            </div>
+                            <hr class="my-0">
+                            <div class="row my-3">
+                                <p class="col-sm-2 mb-0 p-1">Yasser</p>
+                                <p class="col-sm-3 mb-0 p-1">Yasser@gmail.com</p>
+                                <p class="col-sm-2 mb-0 p-1">+212 651 515 151</p>
+                                <p class="col-sm-3 mb-0 p-1">Address youssoufia rue 31 N° 34</p>
+                                <p class="col-sm-1 mb-0 p-1">edit</p>
+                                <p class="col-sm-1 mb-0 p-1">delete</p>
+                            </div>
                         </div>
+
                     </div>
+                </div>
+                <div>
+                    <h4 id="addcontact">Add Contact:</h4>
+                    <form class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-6">
+                            <label for="validationCustom01" class="form-label">Name</label>
+                            <input type="text" class="small-size form-control" id="validationCustom01" placeholder="Enter name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom02" class="form-label">Phone</label>
+                            <input type="number" class="small-size form-control" id="validationCustom02" placeholder="Enter phone" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="validationCustom03" class="form-label">Email</label>
+                            <input type="email" class="small-size form-control" id="validationCustom03" placeholder="Enter email" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="validationCustom04" class="form-label">Address</label>
+                            <input type="text" class="small-size form-control" id="validationCustom04" placeholder="Enter address" required>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">Save</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
